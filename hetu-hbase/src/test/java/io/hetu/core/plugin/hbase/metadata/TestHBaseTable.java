@@ -22,6 +22,7 @@ import org.testng.annotations.Test;
 import java.util.Optional;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
 
 /**
  * TestHBaseTable
@@ -72,11 +73,11 @@ public class TestHBaseTable
                 "StringRowSerializer",
                 hBaseTable.getSerializerClassName());
         assertEquals(false, hBaseTable.isExternal());
-        hBaseTable.toString();
-        hBaseTable.getSchemaTableName();
-        hBaseTable.isIndexed();
-        hBaseTable.getRowIdOrdinal();
-        hBaseTable.getColumnMetadatas();
+        assertNotNull(hBaseTable.toString());
+        assertNotNull(hBaseTable.getSchemaTableName());
+        assertNotNull(hBaseTable.isIndexed());
+        assertNotNull(hBaseTable.getRowIdOrdinal());
+        assertNotNull(hBaseTable.getColumnMetadatas());
 
         assertEquals("", hBaseTable.getIndexTableName());
         assertEquals("", hBaseTable.getMetricsTableName());
